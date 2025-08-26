@@ -1,48 +1,58 @@
 import React from 'react'
-import { FaGithub, FaHome, FaInfoCircle, FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa';
-import Card from './Card';
-
+import { FaGithub, FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa'
 
 const links = [
-    {
-      href: "https://twitter.com",
-      label: "Twitter",
-      icon: <FaTwitter className="h-6 w-6 text-blue-500" />,
-    },
-    {
-      href: "https://youtube.com",
-      label: "YouTube",
-      icon: <FaYoutube className="h-6 w-6 text-red-600" />,
-    },
-    {
-      href: "https://github.com",
-      label: "GitHub",
-      icon: <FaGithub className="h-6 w-6 text-gray-900" />,
-    },
-    {
-      href: "https://instagram.com",
-      label: "Instagram",
-      icon: <FaInstagram className="h-6 w-6 text-pink-500" />,
-    },
-  ];
-  
-
+  {
+    href: 'https://twitter.com',
+    label: 'Twitter',
+    icon: <FaTwitter className="h-8 w-8 text-blue-500" />,
+  },
+  {
+    href: 'https://youtube.com',
+    label: 'YouTube',
+    icon: <FaYoutube className="h-8 w-8 text-red-600" />,
+  },
+  {
+    href: 'https://github.com',
+    label: 'GitHub',
+    icon: <FaGithub className="h-8 w-8 text-gray-800 dark:text-gray-200" />,
+  },
+  {
+    href: 'https://instagram.com',
+    label: 'Instagram',
+    icon: <FaInstagram className="h-8 w-8 text-pink-500" />,
+  },
+]
 
 const Contact = () => {
   return (
-    <section className='bg-gray-100 py-12 px-4 sm:px-6 lg:px-8'>
-        <h2 className="text-3xl font-extrabold text-gray-900 mb-6">Contact Details</h2>
+    <section className="bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-900 dark:to-gray-800 py-16 px-6 lg:px-12">
+      <div className="max-w-4xl mx-auto text-center">
+        <h2 className="text-4xl font-extrabold text-gray-900 dark:text-white mb-6">
+          Contact Me
+        </h2>
+        <p className="text-lg text-gray-700 dark:text-gray-300 mb-10">
+          Let’s connect! Find me on these platforms:
+        </p>
 
-
-        <div className='flex items-center'>
-            {links.map(link=>(<a href={link.href} key={link.label} target='_blank' rel="noopener noreferrer"
-            className='flex items-center space-x-2 text-gray-900 hover:text-gray-600 mr-[2rem]'>
-                {link.icon}
-                <span className='text-lg'>{link.label}</span>
-
-            </a>))}
+        {/* Social Links Grid */}
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-6">
+          {links.map((link) => (
+            <a
+              href={link.href}
+              key={link.label}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex flex-col items-center justify-center bg-white dark:bg-gray-800 rounded-xl shadow-md p-6 hover:shadow-xl hover:-translate-y-1 transform transition duration-300"
+            >
+              {link.icon}
+              <span className="mt-3 text-lg font-medium text-gray-900 dark:text-gray-200">
+                {link.label}
+              </span>
+            </a>
+          ))}
         </div>
-
+      </div>
     </section>
   )
 }
